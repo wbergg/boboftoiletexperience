@@ -32,9 +32,9 @@ def flash():
         # Generate a random number 1-101
         current_value = random.randint(1,101)
         # Generate a random int 0-1
-        orvar = random.randint(0, 1)
+        rand_int = random.randint(0, 1)
         # Send random int to GPIO
-        GPIO.output(12, int(orvar))
+        GPIO.output(12, int(rand_int))
         # Take a small break of 0.value seconds
         current_value = "0." + str(current_value)
         time.sleep(float(current_value))
