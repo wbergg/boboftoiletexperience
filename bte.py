@@ -12,7 +12,7 @@ import time
 import random
 
 def main():
-    #Initialize GPIO
+    # Initialize GPIO
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
     print("GPIO initialized.")
@@ -27,7 +27,7 @@ def flash():
     rand_bool = random.getrandbits(1)
     #print "Random number this run is *drumroll* %s" % rand_bool
 
-    # Generate random numbers for the toilet experience
+    # Run the loop 20 times
     for x in range(20):
         # Generate a random number 1-101
         current_value = random.randint(1,101)
@@ -42,7 +42,8 @@ def flash():
     # When loop is over, lamp should either be lit of off before randomizing again
     GPIO.output(12, int(rand_bool))
     # Let the customer enjoy lit or dark for some seconds.
-    time.sleep(10)
+    rand_int = random.randint(10, 30)
+    time.sleep(rand_int)
 
 def test_relay():
     print ("Testing testing (click-click)")
