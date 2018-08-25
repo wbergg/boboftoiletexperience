@@ -40,10 +40,7 @@ def flash():
         time.sleep(float(current_value))
 
     # When loop is over, lamp should either be lit of off before randomizing again
-    if rand_bool == 1:
-        GPIO.output(12, GPIO.HIGH)
-    if rand_bool == 0:
-        GPIO.output(12, GPIO.LOW)
+    GPIO.output(12, int(rand_bool))
     # Let the customer enjoy lit or dark for some seconds.
     time.sleep(10)
 
